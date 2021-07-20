@@ -32,13 +32,13 @@ namespace SimpleLoginApplication
             this.lblLogin = new Guna.UI.WinForms.GunaLabel();
             this.PanelTop = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lblUsername = new Guna.UI.WinForms.GunaLabel();
-            this.lblPassword = new Guna.UI.WinForms.GunaLabel();
-            this.txtUsername = new Guna.UI.WinForms.GunaTextBox();
+            this.lblError = new Guna.UI.WinForms.GunaLabel();
             this.txtPassword = new Guna.UI.WinForms.GunaTextBox();
+            this.txtUsername = new Guna.UI.WinForms.GunaTextBox();
+            this.lblPassword = new Guna.UI.WinForms.GunaLabel();
+            this.lblUsername = new Guna.UI.WinForms.GunaLabel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnLogin = new Guna.UI.WinForms.GunaGradientButton();
-            this.lblError = new Guna.UI.WinForms.GunaLabel();
             this.PanelTop.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -78,27 +78,37 @@ namespace SimpleLoginApplication
             this.panel1.Size = new System.Drawing.Size(442, 383);
             this.panel1.TabIndex = 2;
             // 
-            // lblUsername
+            // lblError
             // 
-            this.lblUsername.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lblUsername.AutoSize = true;
-            this.lblUsername.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsername.Location = new System.Drawing.Point(46, 35);
-            this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(106, 30);
-            this.lblUsername.TabIndex = 0;
-            this.lblUsername.Text = "Username";
+            this.lblError.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblError.AutoSize = true;
+            this.lblError.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.lblError.ForeColor = System.Drawing.Color.Red;
+            this.lblError.Location = new System.Drawing.Point(59, 220);
+            this.lblError.Name = "lblError";
+            this.lblError.Size = new System.Drawing.Size(0, 21);
+            this.lblError.TabIndex = 2;
+            this.lblError.Click += new System.EventHandler(this.gunaLabel1_Click);
             // 
-            // lblPassword
+            // txtPassword
             // 
-            this.lblPassword.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lblPassword.AutoSize = true;
-            this.lblPassword.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPassword.Location = new System.Drawing.Point(46, 125);
-            this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(99, 30);
-            this.lblPassword.TabIndex = 0;
-            this.lblPassword.Text = "Password";
+            this.txtPassword.BackColor = System.Drawing.Color.Transparent;
+            this.txtPassword.BaseColor = System.Drawing.SystemColors.ActiveCaption;
+            this.txtPassword.BorderColor = System.Drawing.Color.Silver;
+            this.txtPassword.BorderSize = 0;
+            this.txtPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtPassword.FocusedBaseColor = System.Drawing.SystemColors.HotTrack;
+            this.txtPassword.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.txtPassword.FocusedForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.txtPassword.Font = new System.Drawing.Font("Segoe UI", 14F);
+            this.txtPassword.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.txtPassword.Location = new System.Drawing.Point(54, 158);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '⚫';
+            this.txtPassword.Radius = 5;
+            this.txtPassword.SelectedText = "";
+            this.txtPassword.Size = new System.Drawing.Size(335, 35);
+            this.txtPassword.TabIndex = 2;
             // 
             // txtUsername
             // 
@@ -120,25 +130,27 @@ namespace SimpleLoginApplication
             this.txtUsername.Size = new System.Drawing.Size(335, 35);
             this.txtUsername.TabIndex = 1;
             // 
-            // txtPassword
+            // lblPassword
             // 
-            this.txtPassword.BackColor = System.Drawing.Color.Transparent;
-            this.txtPassword.BaseColor = System.Drawing.SystemColors.ActiveCaption;
-            this.txtPassword.BorderColor = System.Drawing.Color.Silver;
-            this.txtPassword.BorderSize = 0;
-            this.txtPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtPassword.FocusedBaseColor = System.Drawing.SystemColors.HotTrack;
-            this.txtPassword.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.txtPassword.FocusedForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.txtPassword.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.txtPassword.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.txtPassword.Location = new System.Drawing.Point(54, 158);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.PasswordChar = '⚫';
-            this.txtPassword.Radius = 5;
-            this.txtPassword.SelectedText = "";
-            this.txtPassword.Size = new System.Drawing.Size(335, 35);
-            this.txtPassword.TabIndex = 1;
+            this.lblPassword.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblPassword.AutoSize = true;
+            this.lblPassword.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPassword.Location = new System.Drawing.Point(46, 125);
+            this.lblPassword.Name = "lblPassword";
+            this.lblPassword.Size = new System.Drawing.Size(99, 30);
+            this.lblPassword.TabIndex = 0;
+            this.lblPassword.Text = "Password";
+            // 
+            // lblUsername
+            // 
+            this.lblUsername.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblUsername.AutoSize = true;
+            this.lblUsername.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsername.Location = new System.Drawing.Point(46, 35);
+            this.lblUsername.Name = "lblUsername";
+            this.lblUsername.Size = new System.Drawing.Size(106, 30);
+            this.lblUsername.TabIndex = 0;
+            this.lblUsername.Text = "Username";
             // 
             // panel2
             // 
@@ -175,18 +187,6 @@ namespace SimpleLoginApplication
             this.btnLogin.Text = "Login";
             this.btnLogin.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
-            // 
-            // lblError
-            // 
-            this.lblError.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lblError.AutoSize = true;
-            this.lblError.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.lblError.ForeColor = System.Drawing.Color.Red;
-            this.lblError.Location = new System.Drawing.Point(59, 220);
-            this.lblError.Name = "lblError";
-            this.lblError.Size = new System.Drawing.Size(0, 21);
-            this.lblError.TabIndex = 2;
-            this.lblError.Click += new System.EventHandler(this.gunaLabel1_Click);
             // 
             // Login
             // 
